@@ -1,120 +1,215 @@
-export const DATA = {
-  name: "DAVID SONG",
-  tagline: "CS @ SJSU • graduating Dec 2025 • I build clean, useful software",
-  contactEmail: "davidhsongg@gmail.com",
-  headerMeta: [
-    { label: "Email", url: "mailto:davidhsongg@gmail.com" },
-    { label: "Phone", url: "tel:+16692361331" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/davidthesong/" },
-    { label: "GitHub", url: "https://github.com/davidhsong" }
-  ],
-  education: {
-    school: "San Jose State University",
-    location: "San Jose, CA",
-    degree: "B.S. Computer Science, Minor in Digital Media Art",
-    dates: "Expected Dec 2025",
-    coursework: [
-      "Data Structures & Algorithms",
-      "Object-Oriented Design",
-      "Software Engineering",
-      "Operating Systems",
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Data Visualization",
-      "Database Management Systems",
-      "Information Security",
-      "Programming Paradigms",
-      "Big Data Processing"
-    ]
-  },
-  experience: [
-    {
-      title: "Software Engineer Fellow",
-      company: "Headstarter AI",
-      dates: "Jul 2024 – Aug 2024",
-      bullets: [
-        "Shipped React features people actually used; kept interactions fast, stable, and accessible. Partnered with design to tune micro-states and ensure no jank.",
-        "Integrated components with Node/Express APIs, hardened error states, and added retries so the UI felt reliable even on flaky networks.",
-        "Planned small weekly releases; wrote sanity checks and reviewed PRs to avoid regressions and keep velocity predictable.",
-        "Set up lightweight CI and basic cloud deploys so releases were boring (in the best way) and rollbacks were easy."
-      ]
-    },
-    {
-      title: "Software Engineer Intern",
-      company: "Life Stages",
-      dates: "May 2024 – Jul 2024",
-      bullets: [
-        "Untangled a noisy auth flow (sessions & API edge cases) and reduced login issues by clarifying states and tightening server responses.",
-        "Refined React layouts for responsiveness and clarity—fixed confusing interactions and improved mobile breakpoints.",
-        "Wrote concise API docs and setup notes so new teammates could get productive quickly without hand-holding."
-      ]
-    }
-  ],
-  projects: [
-    {
-      name: "PPSN — Community Safety Navigator",
-      dates: "Hackathon Project",
-      bullets: [
-        "Built a safer-route web app on React + Mapbox; I owned the map layers, directions, and Firebase storage.",
-        "Implemented route saving, turn-by-turn text, and an animated route marker for clear navigation.",
-        "Added clickable crime markers with details; watched non-technical friends try it and iterated on what actually mattered for them."
-      ],
-      links: [{ label: "GitHub", url: "https://github.com/SJHacks-Team44/ppsn" }]
-    },
-    {
-      name: "ART109 Audio Visualizer",
-      dates: "Course Project",
-      bullets: [
-        "Browser visualizer using Web Audio API and p5.js; supports mic or file input for live playback.",
-        "Built three views (circles, bars, waveform) and tuned sensitivity, resizing, and frame pacing to stay smooth instead of chaotic."
-      ],
-      links: [{ label: "GitHub", url: "https://github.com/davidhsong/art109-audio-visualizer" }]
-    },
-    {
-      name: "Zaiku",
-      dates: "Jan 2025 – Apr 2025",
-      bullets: [
-        "Auth that feels invisible: JWT + Google OAuth on Node/Express with clear error surfaces and safe defaults.",
-        "Search stays snappy with Elasticsearch for larger datasets; added indexes and query tuning for common paths.",
-        "Tests + centralized error handling so debugging later doesn’t turn into archaeology."
-      ],
-      links: [{ label: "GitHub", url: "https://github.com/davidhsong/zaiku" }]
-    },
-    {
-      name: "PromptWave",
-      dates: "Aug 2024 – Oct 2024",
-      bullets: [
-        "Lightweight chat UI to swap between ML models without the confusing bits; clean prompts, clean outputs.",
-        "Trimmed response times via caching and async jobs; added timeouts and rate-limit guards to avoid stalls."
-      ],
-      links: [{ label: "GitHub", url: "https://github.com/davidhsong/promptwave" }]
-    },
-    {
-      name: "HydroSense",
-      dates: "Oct 2023 – Nov 2023",
-      bullets: [
-        "Small IoT dashboard for water sensor data with simple sharing/exports for non-technical users.",
-        "Designed mobile-first layout to make the rest of the build smoother and keep charts usable on phones."
-      ],
-      links: [{ label: "GitHub", url: "https://github.com/davidhsong/HydroSense" }]
-    }
-  ],
-  skills: {
-    Languages: ["Python", "Java", "JavaScript (ES6+)", "SQL", "HTML/CSS"],
-    "Backend & APIs": ["Node.js/Express", "REST APIs", "JWT/OAuth"],
-    Frontend: ["React.js", "Responsive UI", "UI/UX (Figma)"],
-    Databases: ["PostgreSQL", "MongoDB", "MySQL", "ElasticSearch"],
-    "Cloud & Infra": ["AWS", "GCP", "Firebase", "Git", "CI/CD Pipelines"],
-    "Core CS": ["Object-Oriented Programming", "Data Structures & Algorithms", "Debugging", "Scalable Systems"],
-    Collaboration: ["Agile Scrum", "Code Reviews", "Cross-Functional Teamwork", "Documentation"]
-  },
-  interestsDetailed: [
-    { title: "Gym", icon: "💪", explanation: "Lifting helps me reset and think clearly.", images: ["/interests/gym-1.jpg", "/interests/gym-2.jpg", "/interests/gym-3.jpg"] },
-    { title: "Art", icon: "🎨", explanation: "Sketching faces taught me patience and details.", images: ["/interests/art-1.jpg", "/interests/art-2.jpg", "/interests/art-3.jpg"] },
-    { title: "Photography", icon: "📷", explanation: "Playing with light and framing keeps my eye honest.", images: ["/interests/photo-1.jpg", "/interests/photo-2.jpg", "/interests/photo-3.jpg"] },
-    { title: "Music", icon: "🎵", explanation: "Playlists for building and debugging.", images: ["/interests/music-1.jpg", "/interests/music-2.jpg"] },
-    { title: "Festivals / Raves", icon: "🎶", explanation: "EDM shows are my happy place.", images: ["/interests/festival-1.jpg", "/interests/festival-2.jpg", "/interests/festival-3.jpg"] }
-  ]
-};
+// ── World Config ──────────────────────────────────────────────────────────────
+export const WORLD_W = 4000;
+export const WORLD_H = 2600;
+export const SPAWN = { x: 1880, y: 1240 };
+export const PLAYER_W = 22;
+export const PLAYER_H = 34;
+export const PLAYER_SPEED = 3.8;
+export const INTERACT_EXPAND = 68;
 
-export default DATA;
+// ── Game Objects ──────────────────────────────────────────────────────────────
+export const gameObjects = [
+  {
+    id: 'about',
+    label: 'David Song',
+    sublabel: 'Software Engineer',
+    icon: '◈',
+    x: 1790, y: 1050,
+    w: 200, h: 140,
+    solid: true,
+    color: '#8b5cf6',
+    glowColor: 'rgba(139,92,246,0.45)',
+  },
+  {
+    id: 'education',
+    label: 'SJSU',
+    sublabel: 'B.S. Computer Science',
+    icon: '◉',
+    x: 380, y: 280,
+    w: 260, h: 190,
+    solid: true,
+    color: '#3b82f6',
+    glowColor: 'rgba(59,130,246,0.45)',
+  },
+  {
+    id: 'lifestages',
+    label: 'Life Stages',
+    sublabel: 'SWE Intern',
+    icon: '⬡',
+    x: 310, y: 960,
+    w: 240, h: 170,
+    solid: true,
+    color: '#f59e0b',
+    glowColor: 'rgba(245,158,11,0.45)',
+  },
+  {
+    id: 'headstarter',
+    label: 'Headstarter AI',
+    sublabel: 'SWE Fellow',
+    icon: '⬡',
+    x: 310, y: 1520,
+    w: 240, h: 170,
+    solid: true,
+    color: '#10b981',
+    glowColor: 'rgba(16,185,129,0.45)',
+  },
+  {
+    id: 'zaiku',
+    label: 'Zaiku',
+    sublabel: 'Search Platform',
+    icon: '▣',
+    x: 2860, y: 360,
+    w: 210, h: 170,
+    solid: true,
+    color: '#ef4444',
+    glowColor: 'rgba(239,68,68,0.45)',
+  },
+  {
+    id: 'promptwave',
+    label: 'PromptWave',
+    sublabel: 'LLM Interface',
+    icon: '▣',
+    x: 3340, y: 860,
+    w: 210, h: 170,
+    solid: true,
+    color: '#06b6d4',
+    glowColor: 'rgba(6,182,212,0.45)',
+  },
+  {
+    id: 'hydrosense',
+    label: 'HydroSense',
+    sublabel: 'IoT Dashboard',
+    icon: '▣',
+    x: 2860, y: 1370,
+    w: 210, h: 170,
+    solid: true,
+    color: '#6366f1',
+    glowColor: 'rgba(99,102,241,0.45)',
+  },
+  {
+    id: 'skills',
+    label: 'Skills Lab',
+    sublabel: 'Tech Stack',
+    icon: '◈',
+    x: 1710, y: 2060,
+    w: 320, h: 190,
+    solid: true,
+    color: '#ec4899',
+    glowColor: 'rgba(236,72,153,0.45)',
+  },
+];
+
+// ── Resume Data (keyed by game object id) ─────────────────────────────────────
+export const resumeData = {
+  about: {
+    type: 'about',
+    name: 'David Song',
+    role: 'Software Engineer',
+    email: 'davidhsongg@gmail.com',
+    phone: '(669) 236-1331',
+    linkedin: 'https://www.linkedin.com/in/davidthesong/',
+    github: 'https://github.com/davidhsong',
+    description:
+      'CS graduate from SJSU building full-stack applications, AI-powered tools, and scalable cloud systems. Passionate about clean code, great UX, and shipping products that work.',
+  },
+  education: {
+    type: 'education',
+    school: 'San José State University',
+    location: 'San José, CA',
+    degree: 'B.S., Computer Science',
+    minor: 'Minor in Digital Media Art',
+    graduation: 'Dec 2025',
+    gpa: '3.5',
+    courses: [
+      'Data Structures & Algorithms',
+      'Object-Oriented Design',
+      'Operating Systems',
+      'Machine Learning',
+      'Database Systems',
+      'Information Security',
+      'Software Engineering',
+      'Big Data Tools',
+    ],
+  },
+  lifestages: {
+    type: 'work',
+    company: 'Life Stages',
+    role: 'Software Engineer Intern',
+    location: 'San Francisco, CA',
+    period: 'May 2024 — Jul 2024',
+    bullets: [
+      'Deployed React.js components for a high-traffic web application using Hooks and state management for seamless user interaction.',
+      'Refactored the "Daily Check-in" workflow, reducing user friction by 25% and implementing client-side validation to minimize malformed API requests.',
+      'Partnered with QA teams via Git/GitHub pull requests to resolve critical UI bottlenecks, improving stability and accessibility across mobile and desktop.',
+    ],
+  },
+  headstarter: {
+    type: 'work',
+    company: 'Headstarter AI',
+    role: 'Software Engineer Fellow',
+    location: 'Remote',
+    period: 'Jul 2024 — Aug 2024',
+    bullets: [
+      'Shipped 5 full-stack AI applications in an Agile/Scrum environment, delivering feature-ready MVPs through weekly 7-day sprints and public technical demos.',
+      'Built a RAG-based interview prep tool using OpenAI API and Vector Databases, focusing on prompt engineering and latency reduction.',
+      'Configured end-to-end CI/CD pipelines using Python, REST APIs, and Cloud services for a scalable final project architecture.',
+    ],
+  },
+  zaiku: {
+    type: 'project',
+    name: 'Zaiku',
+    subtitle: 'Full-Stack Content Search Platform',
+    period: 'Jan 2025 — Apr 2025',
+    tech: ['ElasticSearch', 'Node.js', 'Express.js', 'JWT', 'Google OAuth 2.0'],
+    bullets: [
+      'Constructed a scalable search engine using ElasticSearch with custom indexing and fuzzy search logic for complex queries across distributed datasets.',
+      'Hardened authentication using JWT and Google OAuth 2.0, securing user sessions and protecting sensitive API endpoints.',
+      'Built a modular Node.js/Express.js backend with 90%+ test coverage using unit and integration tests.',
+    ],
+  },
+  promptwave: {
+    type: 'project',
+    name: 'PromptWave',
+    subtitle: 'LLM-Agnostic Chatbot Interface',
+    period: 'Aug 2024 — Oct 2024',
+    tech: ['React.js', 'Express.js', 'Redis', 'Hugging Face', 'REST APIs'],
+    bullets: [
+      'Built a React.js frontend capable of switching between multiple Hugging Face models in real-time via a custom API adapter layer.',
+      'Implemented Redis Caching to reduce repeat query response times by approximately 60%.',
+      'Handled asynchronous middleware in Express.js for concurrent API streams, ensuring responsive UI during heavy model inference.',
+    ],
+  },
+  hydrosense: {
+    type: 'project',
+    name: 'HydroSense',
+    subtitle: 'Real-Time IoT Data Dashboard',
+    period: 'Oct 2023 — Nov 2023',
+    tech: ['Node.js', 'WebSockets', 'Google Sheets API', 'CSS'],
+    bullets: [
+      'Developed a data visualization dashboard using Node.js and WebSockets to stream real-time water sensor metrics for instant monitoring.',
+      'Integrated Google Sheets API to automate data persistence and external reporting for non-technical stakeholders.',
+      'Refactored CSS architecture with Responsive Design principles for 100% cross-platform compatibility.',
+    ],
+  },
+  skills: {
+    type: 'skills',
+    categories: [
+      {
+        name: 'Languages',
+        items: ['JavaScript (ES6+)', 'Python', 'Java', 'SQL', 'HTML/CSS', 'C/C++'],
+      },
+      {
+        name: 'Frameworks',
+        items: ['React.js', 'Node.js', 'Express.js', 'Redux', 'Flask', 'Scikit-learn', 'PyTorch'],
+      },
+      {
+        name: 'Databases & Cloud',
+        items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'ElasticSearch', 'Firebase', 'GCP', 'AWS'],
+      },
+      {
+        name: 'Tools & DevOps',
+        items: ['Git', 'GitHub', 'Docker', 'CI/CD', 'REST APIs', 'JWT/OAuth', 'Figma', 'Linux'],
+      },
+    ],
+  },
+};
